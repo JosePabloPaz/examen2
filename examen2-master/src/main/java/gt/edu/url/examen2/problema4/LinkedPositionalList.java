@@ -2,6 +2,7 @@ package gt.edu.url.examen2.problema4;
 
 public class LinkedPositionalList<E> implements gt.edu.url.examen2.problema4.PositionalList<E>{
 
+
 	private static class Node<E> implements Position<E> {
 		private E element;
 		private Node<E> prev;// Anterior
@@ -38,11 +39,6 @@ public class LinkedPositionalList<E> implements gt.edu.url.examen2.problema4.Pos
 		public void setNext(Node<E> next) {
 			this.next = next;
 		}
-
-	}
-	
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 
 	}
 
@@ -179,8 +175,23 @@ public class LinkedPositionalList<E> implements gt.edu.url.examen2.problema4.Pos
 
 	@Override
 	public Position<E> positionAtIndex(int i) {
+		
 		// TODO Auto-generated method stub
-		return null;
+		Node<E> node = header;
+		Position<E> a = null;
+		
+		if(i >= size) {
+			System.out.println("IndexOutOfBounds");
+			return null;
+		}else {
+			for(int b = 0; b <= i; b++) {
+				node = node.next;
+			}
+			
+			a = node;
+		}
+		return a;
+		
 	}
 
 }
